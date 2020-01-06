@@ -8,9 +8,10 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>WindowsFormsScript</RootNamespace>
     <AssemblyName>WindowsFormsScript</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -66,8 +67,16 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="RunTime\JSInterface.cs" />
+    <Compile Include="Util\HotKey.cs" />
+    <Compile Include="Util\JSONConfig.cs" />
+    <Compile Include="Util\WinUtil.cs" />
+    <Compile Include="Util\PrimaryScreen.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RunTime\JSRunTime.cs" />
+    <Compile Include="Simulate\SimulateKeyboard.cs" />
+    <Compile Include="Simulate\SimulateMouse.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,6 +88,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
