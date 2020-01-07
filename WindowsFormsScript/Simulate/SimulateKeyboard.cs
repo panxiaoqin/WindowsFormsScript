@@ -33,27 +33,19 @@ namespace WindowsFormsScript.Simulate
             keybd_event(key, 0, 2, 0);
         }
 
-        public static void PressKey(string key)
+        public static void PressKey(string key, int sleep)
         {
-            List<string> allkey = new List<string>();
-            foreach (string temp in allkey)
+            string[] arr = key.Split('|');
+            if (arr.Length == 1)
             {
-                string[] arr = temp.Split('|');
-                if (arr.Length == 1)
+                PressKey(GetKeyByte(arr[0]));
+                Thread.Sleep(50);
+            }
+            else
+            {
+                foreach (string temp in arr)
                 {
-                    PressKey(GetKeyByte(temp));
-                    Thread.Sleep(50);
-                }
-                else
-                {
-                    if (arr.Length == 2)
-                    {
-                        if (arr[0] == "sleep")
-                        {
-                            Thread.Sleep(Convert.ToInt32(arr[1]));
-                            continue;
-                        }
-                    }
+                    Thread.Sleep(sleep);
                     foreach (string temp1 in arr)
                     {
                         PressDownKey(GetKeyByte(temp1));
@@ -68,9 +60,9 @@ namespace WindowsFormsScript.Simulate
             }
         }
 
-        public static void PressKey(string key, int sleep)
+        public static void PressContent(string content, int sleep)
         {
-            foreach (var item in key)
+            foreach (var item in content)
             {
                 PressKey(GetKeyByte(item.ToString()));
                 Thread.Sleep(sleep);

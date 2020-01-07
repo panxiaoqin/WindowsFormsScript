@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Threading;
 using JavaScriptEngineSwitcher.Core;
 using JavaScriptEngineSwitcher.V8;
@@ -17,6 +19,14 @@ namespace WindowsFormsScript.RunTime
         public void injectJS(string js)
         {
             jsEngine.Execute(js);
+        }
+
+        public void injectJS(List<FileInfo> files)
+        {
+            foreach (var item in files)
+            {
+                jsEngine.ExecuteFile(item.FullName);
+            }
         }
 
         public void SetVariableValue(string variableName, object value)

@@ -13,7 +13,7 @@ namespace WindowsFormsScript
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmScript());
+            Application.Run(new FrmMain());
         }
     }
 }

@@ -1,22 +1,37 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsScript", "WindowsFormsScript\WindowsFormsScript.csproj", "{E8D6A916-7A6A-4EEE-B424-E87B1C0622AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E8D6A916-7A6A-4EEE-B424-E87B1C0622AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E8D6A916-7A6A-4EEE-B424-E87B1C0622AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8D6A916-7A6A-4EEE-B424-E87B1C0622AF}.Debug|x64.ActiveCfg = Debug|x64
+		{E8D6A916-7A6A-4EEE-B424-E87B1C0622AF}.Debug|x64.Build.0 = Debug|x64
+		{E8D6A916-7A6A-4EEE-B424-E87B1C0622AF}.Debug|x86.ActiveCfg = Debug|x86
+		{E8D6A916-7A6A-4EEE-B424-E87B1C0622AF}.Debug|x86.Build.0 = Debug|x86
 		{E8D6A916-7A6A-4EEE-B424-E87B1C0622AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8D6A916-7A6A-4EEE-B424-E87B1C0622AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8D6A916-7A6A-4EEE-B424-E87B1C0622AF}.Release|x64.ActiveCfg = Release|x64
+		{E8D6A916-7A6A-4EEE-B424-E87B1C0622AF}.Release|x64.Build.0 = Release|x64
+		{E8D6A916-7A6A-4EEE-B424-E87B1C0622AF}.Release|x86.ActiveCfg = Release|x86
+		{E8D6A916-7A6A-4EEE-B424-E87B1C0622AF}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5129136-D205-41C4-AA13-C51D09A94D55}
 	EndGlobalSection
 EndGlobal
