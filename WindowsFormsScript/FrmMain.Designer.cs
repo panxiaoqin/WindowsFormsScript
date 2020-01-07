@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtInfo = new System.Windows.Forms.RichTextBox();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.cboListScript = new System.Windows.Forms.ComboBox();
             this.btnRun = new System.Windows.Forms.Button();
+            this.cboListScript = new System.Windows.Forms.ComboBox();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.txtInfo = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,14 +47,24 @@
             this.panel1.Size = new System.Drawing.Size(382, 50);
             this.panel1.TabIndex = 0;
             // 
-            // txtInfo
+            // btnRun
             // 
-            this.txtInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtInfo.Location = new System.Drawing.Point(0, 50);
-            this.txtInfo.Name = "txtInfo";
-            this.txtInfo.Size = new System.Drawing.Size(382, 503);
-            this.txtInfo.TabIndex = 1;
-            this.txtInfo.Text = "";
+            this.btnRun.Location = new System.Drawing.Point(270, 13);
+            this.btnRun.Name = "btnRun";
+            this.btnRun.Size = new System.Drawing.Size(100, 25);
+            this.btnRun.TabIndex = 3;
+            this.btnRun.Text = "执行脚本";
+            this.btnRun.UseVisualStyleBackColor = true;
+            this.btnRun.Click += new System.EventHandler(this.BtnRun_Click);
+            // 
+            // cboListScript
+            // 
+            this.cboListScript.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboListScript.FormattingEnabled = true;
+            this.cboListScript.Location = new System.Drawing.Point(119, 13);
+            this.cboListScript.Name = "cboListScript";
+            this.cboListScript.Size = new System.Drawing.Size(145, 23);
+            this.cboListScript.TabIndex = 2;
             // 
             // btnEdit
             // 
@@ -66,26 +76,16 @@
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
-            // cboListScript
+            // txtInfo
             // 
-            this.cboListScript.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboListScript.FormattingEnabled = true;
-            this.cboListScript.Location = new System.Drawing.Point(119, 13);
-            this.cboListScript.Name = "cboListScript";
-            this.cboListScript.Size = new System.Drawing.Size(145, 23);
-            this.cboListScript.TabIndex = 2;
+            this.txtInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtInfo.Location = new System.Drawing.Point(0, 50);
+            this.txtInfo.Name = "txtInfo";
+            this.txtInfo.Size = new System.Drawing.Size(382, 503);
+            this.txtInfo.TabIndex = 1;
+            this.txtInfo.Text = "";
             // 
-            // btnRun
-            // 
-            this.btnRun.Location = new System.Drawing.Point(270, 13);
-            this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(100, 25);
-            this.btnRun.TabIndex = 3;
-            this.btnRun.Text = "执行脚本";
-            this.btnRun.UseVisualStyleBackColor = true;
-            this.btnRun.Click += new System.EventHandler(this.BtnRun_Click);
-            // 
-            // Form1
+            // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -93,10 +93,11 @@
             this.Controls.Add(this.txtInfo);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "脚本";
             this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

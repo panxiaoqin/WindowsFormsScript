@@ -11,6 +11,13 @@ namespace WindowsFormsScript.RunTime
     {
         private IJsEngine jsEngine = new V8JsEngine();
 
+        private readonly Action<string> webLogListener;
+
+        public JSRunTime(Action<string> action)
+        {
+            webLogListener = action;
+        }
+
         public void RegisterJsObject(string itemName, object value)
         {
             jsEngine.EmbedHostObject(itemName, value);
@@ -40,11 +47,13 @@ namespace WindowsFormsScript.RunTime
             {
                 try
                 {
+                    setMessage("执行开始");
                     jsEngine.CallFunction(functionName, args);
+                    setMessage("执行结束");
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex);
+                    setMessage(ex.ToString());
                 }
             }).Start();
         }
@@ -52,6 +61,11 @@ namespace WindowsFormsScript.RunTime
         public void ExecuteScript(string code)
         {
             jsEngine.Execute(code);
+        }
+
+        public void setMessage(string msg)
+        {
+            webLogListener?.Invoke(msg);
         }
     }
 }
