@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using WindowsFormsScript.Simulate;
@@ -7,10 +6,10 @@ using WindowsFormsScript.Util;
 
 namespace WindowsFormsScript
 {
-    public partial class Form1 : Form
+    public partial class FrmMain : Form
     {
 
-        public Form1()
+        public FrmMain()
         {
             InitializeComponent();
 
@@ -25,18 +24,21 @@ namespace WindowsFormsScript
         {
             var workingArea = SystemInformation.WorkingArea;
             SetDesktopLocation(workingArea.Width - Size.Width, 40);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //var workingArea = PrimaryScreen.DESKTOP;
+            //var workingArea = PrimaryScreen.WorkingArea;
             //SimulateMouse.MouseToAnimation(new Point(workingArea.Width, workingArea.Height));
-            WinUtil.minWindow("msedge");
+            //WinUtil.minWindow("msedge");
+            //WinUtil.selectWindow("editplus");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void BtnEdit_Click(object sender, EventArgs e)
         {
-            WinUtil.selectWindow("editplus");
+            var frmScript = new FrmScript();
+            frmScript.ShowDialog();
+        }
+
+        private void BtnRun_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

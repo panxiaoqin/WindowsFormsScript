@@ -22,5 +22,10 @@ namespace WindowsFormsScript.RunTime
         {
 
         }
+
+        public void selectApp(string name)
+        {
+
+        }
     }
 }

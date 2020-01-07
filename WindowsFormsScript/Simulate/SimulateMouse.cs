@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
+using WindowsFormsScript.Util;
 
 namespace WindowsFormsScript.Simulate
 {
@@ -30,7 +31,7 @@ namespace WindowsFormsScript.Simulate
         private const int MOUSEEVENTF_MIDDLEUP = 0x0040; //模拟鼠标中键抬起 
         private const int MOUSEEVENTF_WHEEL = 0x0800;  //表明鼠标轮被移动移动的数量由dwData给出
         private const int MOUSEEVENTF_ABSOLUTE = 0x8000; //标示是否采用绝对坐标 
-        public static SizeF ScreenSize = new SizeF(1920, 1080);
+        public static SizeF ScreenSize = PrimaryScreen.DESKTOP;
         public static Point GetMouseLocation()
         {
             Point defPnt = new Point();
@@ -40,14 +41,15 @@ namespace WindowsFormsScript.Simulate
 
         public static Point TransformPoint(Point point)
         {
-            Rectangle rect = Screen.PrimaryScreen.Bounds;
-            if (ScreenSize.Width == rect.Width)
-            {
-                return point;
-            }
-            float x = (rect.Width / ScreenSize.Width) * point.X;
-            float y = (rect.Height / ScreenSize.Height) * point.Y;
-            return new Point((int)x, (int)y);
+            return point;
+            //Rectangle rect = Screen.PrimaryScreen.Bounds;
+            //if ((int)ScreenSize.Width == rect.Width)
+            //{
+            //    return point;
+            //}
+            //float x = (rect.Width / ScreenSize.Width) * point.X;
+            //float y = (rect.Height / ScreenSize.Height) * point.Y;
+            //return new Point((int)x, (int)y);
         }
 
         public static void MouseTo(Point point)
