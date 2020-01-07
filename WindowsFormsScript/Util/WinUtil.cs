@@ -37,14 +37,23 @@ namespace WindowsFormsScript.Util
             }
         }
 
-        public static void selectWindow(string processName)
+        private static void selectWindow(Process process)
+        {
+            IntPtr handle = process.MainWindowHandle;
+            SendMessage(handle, WM_SYSCOMMAND2, new IntPtr(SC_MAXIMIZE2), IntPtr.Zero); // 最大化
+            SwitchToThisWindow(handle, true); // 激活
+        }
+
+        public static void selectWindow(string processName, string path = null)
         {
             Process[] processes = Process.GetProcessesByName(processName);
-            if (processes.Length > 0)
+            foreach (var item in processes)
             {
-                IntPtr handle = processes[0].MainWindowHandle;
-                SendMessage(handle, WM_SYSCOMMAND2, new IntPtr(SC_MAXIMIZE2), IntPtr.Zero); // 最大化
-                SwitchToThisWindow(handle, true);	// 激活
+                if (item.MainModule?.FileName == path || path == null)
+                {
+                    selectWindow(item);
+                    break;
+                }
             }
         }
     }

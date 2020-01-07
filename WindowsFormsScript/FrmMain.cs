@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using WindowsFormsScript.RunTime;
-using WindowsFormsScript.Simulate;
 using WindowsFormsScript.Util;
 
 namespace WindowsFormsScript
@@ -41,7 +40,6 @@ namespace WindowsFormsScript
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var a = new JSScript("test");
             jsi = new JSInterface();
             var workingArea = SystemInformation.WorkingArea;
             SetDesktopLocation(workingArea.Width - Size.Width, 40);

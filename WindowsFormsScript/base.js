@@ -10,8 +10,8 @@ function win_sleep(time) {
     runtime.sleep(parseInt(time));
 }
 
-function win_select(app) {
-    runtime.selectApp(app);
+function win_select(app, path) {
+    runtime.selectApp(app, path);
 }
 
 function win_script(fun) {

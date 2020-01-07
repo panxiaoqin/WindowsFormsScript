@@ -105,8 +105,11 @@ namespace WindowsFormsScript
                     {
                         if (listSource == listRight)
                         {
-                            JSScript.deleteFile(dragItem.Params[0]);
-                            reloadRightData();
+                            if (MessageBox.Show("确定要删除吗?", "删除脚本", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                            {
+                                JSScript.deleteFile(dragItem.Params[0]);
+                                reloadRightData();
+                            }
                         }
                         else
                         {
@@ -173,6 +176,7 @@ namespace WindowsFormsScript
             script.toFile();
             leftBindData.Clear();
             reloadRightData();
+            txtName.Text = txtRemarks.Text = "";
         }
     }
 }

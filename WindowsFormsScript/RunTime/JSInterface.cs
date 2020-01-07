@@ -38,9 +38,13 @@ namespace WindowsFormsScript.RunTime
             Thread.Sleep(defaultSleepTime);
         }
 
-        public void selectApp(string name)
+        public void selectApp(string name, string path)
         {
-            WinUtil.selectWindow(name);
+            var base64 = Convert.FromBase64String(name);
+            string nname = Encoding.UTF8.GetString(base64);
+            base64 = Convert.FromBase64String(path);
+            string npath = Encoding.UTF8.GetString(base64);
+            WinUtil.selectWindow(nname, npath);
             Thread.Sleep(defaultSleepTime);
         }
     }

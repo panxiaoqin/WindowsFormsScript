@@ -29,21 +29,22 @@
         private void InitializeComponent()
         {
             this.panelMouse = new System.Windows.Forms.Panel();
-            this.panelInput = new System.Windows.Forms.Panel();
-            this.panelSleep = new System.Windows.Forms.Panel();
-            this.panelSelectApp = new System.Windows.Forms.Panel();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.txtLocation = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtContent = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.txtLocation = new System.Windows.Forms.TextBox();
+            this.panelInput = new System.Windows.Forms.Panel();
             this.txtTime = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtContent = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panelSleep = new System.Windows.Forms.Panel();
             this.txtSleepTime = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.panelSelectApp = new System.Windows.Forms.Panel();
             this.txtSelectApp = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cboPath = new System.Windows.Forms.ComboBox();
             this.panelMouse.SuspendLayout();
             this.panelInput.SuspendLayout();
             this.panelSleep.SuspendLayout();
@@ -61,6 +62,22 @@
             this.panelMouse.Size = new System.Drawing.Size(382, 50);
             this.panelMouse.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "鼠标点击位置";
+            // 
+            // txtLocation
+            // 
+            this.txtLocation.Location = new System.Drawing.Point(115, 12);
+            this.txtLocation.Name = "txtLocation";
+            this.txtLocation.Size = new System.Drawing.Size(255, 25);
+            this.txtLocation.TabIndex = 0;
+            // 
             // panelInput
             // 
             this.panelInput.Controls.Add(this.txtTime);
@@ -73,68 +90,12 @@
             this.panelInput.Size = new System.Drawing.Size(382, 80);
             this.panelInput.TabIndex = 1;
             // 
-            // panelSleep
+            // txtTime
             // 
-            this.panelSleep.Controls.Add(this.txtSleepTime);
-            this.panelSleep.Controls.Add(this.label4);
-            this.panelSleep.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSleep.Location = new System.Drawing.Point(0, 130);
-            this.panelSleep.Name = "panelSleep";
-            this.panelSleep.Size = new System.Drawing.Size(382, 50);
-            this.panelSleep.TabIndex = 2;
-            // 
-            // panelSelectApp
-            // 
-            this.panelSelectApp.Controls.Add(this.txtSelectApp);
-            this.panelSelectApp.Controls.Add(this.label5);
-            this.panelSelectApp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSelectApp.Location = new System.Drawing.Point(0, 180);
-            this.panelSelectApp.Name = "panelSelectApp";
-            this.panelSelectApp.Size = new System.Drawing.Size(382, 50);
-            this.panelSelectApp.TabIndex = 3;
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnConfirm.Location = new System.Drawing.Point(115, 6);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(149, 30);
-            this.btnConfirm.TabIndex = 4;
-            this.btnConfirm.Text = "确认";
-            this.btnConfirm.UseVisualStyleBackColor = true;
-            this.btnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
-            // 
-            // txtLocation
-            // 
-            this.txtLocation.Location = new System.Drawing.Point(115, 12);
-            this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(255, 25);
-            this.txtLocation.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "鼠标点击位置";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "输入内容";
-            // 
-            // txtContent
-            // 
-            this.txtContent.Location = new System.Drawing.Point(115, 12);
-            this.txtContent.Name = "txtContent";
-            this.txtContent.Size = new System.Drawing.Size(255, 25);
-            this.txtContent.TabIndex = 1;
+            this.txtTime.Location = new System.Drawing.Point(115, 44);
+            this.txtTime.Name = "txtTime";
+            this.txtTime.Size = new System.Drawing.Size(255, 25);
+            this.txtTime.TabIndex = 3;
             // 
             // label3
             // 
@@ -145,12 +106,31 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "间隔时间";
             // 
-            // txtTime
+            // txtContent
             // 
-            this.txtTime.Location = new System.Drawing.Point(115, 44);
-            this.txtTime.Name = "txtTime";
-            this.txtTime.Size = new System.Drawing.Size(255, 25);
-            this.txtTime.TabIndex = 3;
+            this.txtContent.Location = new System.Drawing.Point(115, 12);
+            this.txtContent.Name = "txtContent";
+            this.txtContent.Size = new System.Drawing.Size(255, 25);
+            this.txtContent.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "输入内容";
+            // 
+            // panelSleep
+            // 
+            this.panelSleep.Controls.Add(this.txtSleepTime);
+            this.panelSleep.Controls.Add(this.label4);
+            this.panelSleep.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSleep.Location = new System.Drawing.Point(0, 130);
+            this.panelSleep.Name = "panelSleep";
+            this.panelSleep.Size = new System.Drawing.Size(382, 50);
+            this.panelSleep.TabIndex = 2;
             // 
             // txtSleepTime
             // 
@@ -168,12 +148,24 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "间隔时间";
             // 
+            // panelSelectApp
+            // 
+            this.panelSelectApp.Controls.Add(this.cboPath);
+            this.panelSelectApp.Controls.Add(this.txtSelectApp);
+            this.panelSelectApp.Controls.Add(this.label5);
+            this.panelSelectApp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSelectApp.Location = new System.Drawing.Point(0, 180);
+            this.panelSelectApp.Name = "panelSelectApp";
+            this.panelSelectApp.Size = new System.Drawing.Size(382, 80);
+            this.panelSelectApp.TabIndex = 3;
+            // 
             // txtSelectApp
             // 
             this.txtSelectApp.Location = new System.Drawing.Point(115, 12);
             this.txtSelectApp.Name = "txtSelectApp";
             this.txtSelectApp.Size = new System.Drawing.Size(255, 25);
             this.txtSelectApp.TabIndex = 7;
+            this.txtSelectApp.TextChanged += new System.EventHandler(this.txtSelectApp_TextChanged);
             // 
             // label5
             // 
@@ -184,20 +176,40 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "选择运用";
             // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnConfirm.Location = new System.Drawing.Point(115, 6);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(149, 30);
+            this.btnConfirm.TabIndex = 4;
+            this.btnConfirm.Text = "确认";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnConfirm);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 230);
+            this.panel1.Location = new System.Drawing.Point(0, 260);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(382, 53);
             this.panel1.TabIndex = 5;
+            // 
+            // cboPath
+            // 
+            this.cboPath.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPath.FormattingEnabled = true;
+            this.cboPath.Location = new System.Drawing.Point(115, 44);
+            this.cboPath.Name = "cboPath";
+            this.cboPath.Size = new System.Drawing.Size(255, 23);
+            this.cboPath.TabIndex = 8;
             // 
             // FrmEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 283);
+            this.ClientSize = new System.Drawing.Size(382, 313);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelSelectApp);
             this.Controls.Add(this.panelSleep);
@@ -240,5 +252,6 @@
         private System.Windows.Forms.TextBox txtSelectApp;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox cboPath;
     }
 }

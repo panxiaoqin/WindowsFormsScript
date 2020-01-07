@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 using WindowsFormsScript.RunTime;
 using WindowsFormsScript.Util;
@@ -54,7 +56,7 @@ namespace WindowsFormsScript
         {
             int height = 37;
             height += 30;
-            if (tag == 1)
+            if (tag == 1 || tag == 3)
             {
                 height += 80;
             }
@@ -95,7 +97,10 @@ namespace WindowsFormsScript
                     panelSelectApp.Visible = true;
                     if (isEdit)
                     {
-                        txtSelectApp.Text = edit.Params[0];
+                        var base64 = Convert.FromBase64String(edit.Params[0]);
+                        txtSelectApp.Text = Encoding.UTF8.GetString(base64);
+                        base64 = Convert.FromBase64String(edit.Params[1]);
+                        cboPath.Text = Encoding.UTF8.GetString(base64);
                     }
                     break;
             }
@@ -104,6 +109,7 @@ namespace WindowsFormsScript
 
         public JSScriptItem getItem()
         {
+            edit.loadItemName();
             return edit;
         }
 
@@ -153,14 +159,35 @@ namespace WindowsFormsScript
                     edit.Params.Add(txtTime.Text);
                     break;
                 case 2:
-                    edit.Params.Add(txtTime.Text);
+                    edit.Params.Add(txtSleepTime.Text);
                     break;
                 case 3:
-                    edit.Params.Add(txtSelectApp.Text);
+                    var base64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(txtSelectApp.Text));
+                    edit.Params.Add(base64);
+                    base64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(cboPath.Text));
+                    edit.Params.Add(base64);
                     break;
             }
             DialogResult = DialogResult.OK;
             Close();
+        }
+
+        private void txtSelectApp_TextChanged(object sender, EventArgs e)
+        {
+            Process[] processes = Process.GetProcessesByName(txtSelectApp.Text);
+            cboPath.Items.Clear();
+            foreach (var item in processes)
+            {
+                var fileName = item.MainModule?.FileName;
+                if (fileName != null)
+                {
+                    cboPath.Items.Add(fileName);
+                }
+            }
+            if (cboPath.Items.Count > 0)
+            {
+                cboPath.SelectedIndex = 0;
+            }
         }
     }
 }

@@ -16,6 +16,8 @@ namespace WindowsFormsScript.RunTime
 
         public string FunName;
 
+        public string ItemName { get; set; } = null;
+
         public List<string> Params = new List<string>();
 
         public JSScriptItem(string name)
@@ -27,10 +29,25 @@ namespace WindowsFormsScript.RunTime
         {
             FunName = Script;
             Params.Add(Path.GetFileNameWithoutExtension(file.FullName));
+            ItemName = "脚本:" + File.ReadAllLines(file.FullName)[0].Substring(2);
+        }
+
+        public void loadItemName()
+        {
+            if (FunName == SelectApp)
+            {
+                var base64 = Convert.FromBase64String(Params[0]);
+                string nname = Encoding.UTF8.GetString(base64);
+                ItemName = "选择:" + nname;
+            }
         }
 
         public override string ToString()
         {
+            if (ItemName != null)
+            {
+                return ItemName;
+            }
             StringBuilder str = new StringBuilder();
             switch (FunName)
             {
@@ -49,7 +66,6 @@ namespace WindowsFormsScript.RunTime
                 }
                 str.Append(Params[i]);
             }
-
             return str.ToString();
         }
 
@@ -74,6 +90,7 @@ namespace WindowsFormsScript.RunTime
             JSScriptItem item = new JSScriptItem(name);
             var para = content.Substring(index + 1, content.Length - 3 - index);
             item.Params = para.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(t => t.Trim().Trim('\"')).ToList();
+            item.loadItemName();
             return item;
         }
     }
