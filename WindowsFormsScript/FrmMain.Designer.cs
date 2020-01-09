@@ -81,6 +81,7 @@
             this.txtInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtInfo.Location = new System.Drawing.Point(0, 50);
             this.txtInfo.Name = "txtInfo";
+            this.txtInfo.ReadOnly = true;
             this.txtInfo.Size = new System.Drawing.Size(382, 503);
             this.txtInfo.TabIndex = 1;
             this.txtInfo.Text = "";

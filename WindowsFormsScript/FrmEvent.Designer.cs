@@ -40,11 +40,11 @@
             this.txtSleepTime = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panelSelectApp = new System.Windows.Forms.Panel();
+            this.cboPath = new System.Windows.Forms.ComboBox();
             this.txtSelectApp = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cboPath = new System.Windows.Forms.ComboBox();
             this.panelMouse.SuspendLayout();
             this.panelInput.SuspendLayout();
             this.panelSleep.SuspendLayout();
@@ -75,6 +75,7 @@
             // 
             this.txtLocation.Location = new System.Drawing.Point(115, 12);
             this.txtLocation.Name = "txtLocation";
+            this.txtLocation.ReadOnly = true;
             this.txtLocation.Size = new System.Drawing.Size(255, 25);
             this.txtLocation.TabIndex = 0;
             // 
@@ -159,6 +160,15 @@
             this.panelSelectApp.Size = new System.Drawing.Size(382, 80);
             this.panelSelectApp.TabIndex = 3;
             // 
+            // cboPath
+            // 
+            this.cboPath.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPath.FormattingEnabled = true;
+            this.cboPath.Location = new System.Drawing.Point(115, 44);
+            this.cboPath.Name = "cboPath";
+            this.cboPath.Size = new System.Drawing.Size(255, 23);
+            this.cboPath.TabIndex = 8;
+            // 
             // txtSelectApp
             // 
             this.txtSelectApp.Location = new System.Drawing.Point(115, 12);
@@ -195,15 +205,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(382, 53);
             this.panel1.TabIndex = 5;
-            // 
-            // cboPath
-            // 
-            this.cboPath.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboPath.FormattingEnabled = true;
-            this.cboPath.Location = new System.Drawing.Point(115, 44);
-            this.cboPath.Name = "cboPath";
-            this.cboPath.Size = new System.Drawing.Size(255, 23);
-            this.cboPath.TabIndex = 8;
             // 
             // FrmEvent
             // 
