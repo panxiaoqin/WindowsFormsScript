@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using WindowsFormsScript.RunTime;
 
@@ -168,6 +169,17 @@ namespace WindowsFormsScript
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
+            if (!Regex.IsMatch(txtName.Text, @"^[A-Za-z]*$"))
+            {
+                MessageBox.Show("名字必须是字母");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtRemarks.Text))
+            {
+                MessageBox.Show("不能为空");
+                return;
+            }
             var script = new JSScript(txtName.Text, txtRemarks.Text);
             foreach (JSScriptItem item in leftBindData)
             {

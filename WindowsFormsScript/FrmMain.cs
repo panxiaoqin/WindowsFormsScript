@@ -45,7 +45,7 @@ namespace WindowsFormsScript
             SetDesktopLocation(workingArea.Width - Size.Width, 40);
             reloadRightData();
             cboListScript.DataSource = cboBindData;
-            HotKey.RegisterHotKey(Handle, 101, HotKey.KeyModifiers.Ctrl, Keys.F12);
+            HotKey.RegisterHotKey(Handle, 101, HotKey.KeyModifiers.Ctrl | HotKey.KeyModifiers.Shift, Keys.S);
         }
 
         private void BtnEdit_Click(object sender, EventArgs e)
